@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Happy Birthday Ayaanggg</title>
+    <link rel="stylesheet" href="style/style.css" />
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- font awesome 6.7.2-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Masukkan Tanggal Ulang Tahun Kamu</h1>
+      <input type="date" id="dateInput" />
+      <button onclick="checkDate()">Cek</button>
+      <div id="greeting">🎉 Selamat Ulang Tahun! 🎂</div>
+    </div>
+
+    <button id="musicButton" onclick="toggleMusic()">
+      <span class="icon-stack">
+        <i class="fa-solid fa-music"></i>
+        <i class="fa-solid fa-slash" id="slashIcon"></i>
+      </span>
+    </button>
+
+    <audio id="backgroundMusic" loop>
+      <source
+        src="music/NIKI - You'll Be in My Heart.mp3"
+        autoplay
+        muted
+        type="audio/mp3"
+      />
+      Your browser does not support the audio element.
+    </audio>
+
+    <div class="slideshow-wrapper" id="slideshowWrapper">
+      <div class="slideshow left">
+        <div class="slide-track" id="slideTrackLeft"></div>
+      </div>
+      <div class="slideshow right">
+        <div class="slide-track" id="slideTrackRight"></div>
+      </div>
+      <div class="slideshow left">
+        <div class="slide-track" id="slideTrackExtra1"></div>
+      </div>
+      <div class="slideshow right">
+        <div class="slide-track" id="slideTrackExtra2"></div>
+      </div>
+
+      <!-- <div class="slideshow left">
+        <div class="slide-track">
+          <div class="slide">
+            <img src="img/img1.jpg" alt="img1" />
+          </div>
+          <div class="slide">
+            <img src="img/img2.jpg" alt="img2" />
+          </div>
+          <div class="slide">
+            <img src="img/img3.jpg" alt="img3" />
+          </div>
+          <div class="slide">
+            <img src="img/img4.jpg" alt="img4" />
+          </div>
+          <div class="slide">
+            <img src="img/img5.jpg" alt="img5" />
+          </div>
+        </div>
+      </div>
+      <div class="slideshow right">
+        <div class="slide-track">
+          <div class="slide">
+            <img src="img/img1.jpg" alt="img1" />
+          </div>
+          <div class="slide">
+            <img src="img/img2.jpg" alt="img2" />
+          </div>
+          <div class="slide">
+            <img src="img/img3.jpg" alt="img3" />
+          </div>
+          <div class="slide">
+            <img src="img/img4.jpg" alt="img4" />
+          </div>
+          <div class="slide">
+            <img src="img/img5.jpg" alt="img5" />
+          </div>
+          <div class="slide">
+            <img src="img/img1.jpg" alt="img1" />
+          </div>
+          <div class="slide">
+            <img src="img/img2.jpg" alt="img2" />
+          </div>
+          <div class="slide">
+            <img src="img/img3.jpg" alt="img3" />
+          </div>
+          <div class="slide">
+            <img src="img/img4.jpg" alt="img4" />
+          </div>
+          <div class="slide">
+            <img src="img/img5.jpg" alt="img5" />
+          </div>
+        </div>
+      </div>
+      <div class="slideshow left extra1">
+        <div class="slide-track">
+          <div class="slide">
+            <img src="img/img1.jpg" alt="img1" />
+          </div>
+          <div class="slide">
+            <img src="img/img2.jpg" alt="img2" />
+          </div>
+          <div class="slide">
+            <img src="img/img3.jpg" alt="img3" />
+          </div>
+          <div class="slide">
+            <img src="img/img4.jpg" alt="img4" />
+          </div>
+          <div class="slide">
+            <img src="img/img5.jpg" alt="img5" />
+          </div>
+          <div class="slide">
+            <img src="img/img1.jpg" alt="img1" />
+          </div>
+          <div class="slide">
+            <img src="img/img2.jpg" alt="img2" />
+          </div>
+          <div class="slide">
+            <img src="img/img3.jpg" alt="img3" />
+          </div>
+          <div class="slide">
+            <img src="img/img4.jpg" alt="img4" />
+          </div>
+          <div class="slide">
+            <img src="img/img5.jpg" alt="img5" />
+          </div>
+        </div>
+      </div>
+      <div class="slideshow right extra2">
+        <div class="slide-track">
+          <div class="slide">
+            <img src="img/img1.jpg" alt="img1" />
+          </div>
+          <div class="slide">
+            <img src="img/img2.jpg" alt="img2" />
+          </div>
+          <div class="slide">
+            <img src="img/img3.jpg" alt="img3" />
+          </div>
+          <div class="slide">
+            <img src="img/img4.jpg" alt="img4" />
+          </div>
+          <div class="slide">
+            <img src="img/img5.jpg" alt="img5" />
+          </div>
+          <div class="slide">
+            <img src="img/img1.jpg" alt="img1" />
+          </div>
+          <div class="slide">
+            <img src="img/img2.jpg" alt="img2" />
+          </div>
+          <div class="slide">
+            <img src="img/img3.jpg" alt="img3" />
+          </div>
+          <div class="slide">
+            <img src="img/img4.jpg" alt="img4" />
+          </div>
+          <div class="slide">
+            <img src="img/img5.jpg" alt="img5" />
+          </div>
+        </div>
+      </div> -->
+    </div>
+    <script src="script/script.js"></script>
+  </body>
+</html>

@@ -38,6 +38,7 @@ const imagePaths = [];
 // Isi array dengan path gambar
 for (let i = 1; i <= totalImages; i++) {
   imagePaths.push(`img/img${i}.jpg`);
+  imagePaths.push(`img/img${i}.JPG`);
 }
 
 // Bagi gambar menjadi 4 grup merata

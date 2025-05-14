@@ -46,7 +46,6 @@ const imagePaths = [];
 // Isi array dengan path gambar
 for (let i = 1; i <= totalImages; i++) {
   imagePaths.push(`img/img${i}.jpg`);
-  imagePaths.push(`img/img${i}.JPG`);
 }
 
 // Bagi gambar menjadi 4 grup merata
@@ -80,6 +79,7 @@ function populateSlideshows() {
       const img = document.createElement("img");
       img.src = src;
       img.alt = "Slideshow Image";
+      img.loading = "lazy";
 
       slide.appendChild(img);
       track.appendChild(slide);

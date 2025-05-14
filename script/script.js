@@ -10,9 +10,17 @@ function checkDate() {
     populateSlideshows();
 
     const music = document.getElementById("backgroundMusic");
-    music.play().catch((e) => {
-      console.log("Autoplay ditolak:", e);
-    });
+    const slashIcon = document.getElementById("slashIcon");
+
+    music.muted = false;
+    music
+      .play()
+      .then(() => {
+        slashIcon.style.display = "none";
+      })
+      .catch((e) => {
+        console.log("Autoplay ditolak:", e);
+      });
 
     const cardWrapper = document.createElement("div");
     cardWrapper.className = "birthday-card-wrapper";
@@ -91,14 +99,17 @@ function toggleMusic() {
 
   // Jika musik sedang diputar, hentikan
   if (music.paused) {
-    music.play();
-    slashIcon.style.display = "none";
+    music.muted = false;
+    music
+      .play()
+      .then(() => {
+        slashIcon.style.display = "none";
+      })
+      .catch((error) => {
+        console.warn("Audio gagal diputar:", error);
+      });
   } else {
     music.pause();
     slashIcon.style.display = "inline";
   }
 }
-
-const music = document.getElementById("backgroundMusic");
-music.muted = false;
-music.play();

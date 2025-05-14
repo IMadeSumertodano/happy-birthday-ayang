@@ -102,14 +102,12 @@ button:hover {
 
 .slideshow.left .slide-track {
   display: flex;
-  /* width: calc(250px * 30); */
   width: max-content;
   animation: slideLeft 60s linear infinite;
 }
 
 .slideshow.right .slide-track {
   display: flex;
-  /* width: calc(250px * 30); */
   width: max-content;
   animation: slideRight 60s linear infinite;
 }
@@ -229,7 +227,7 @@ button:hover {
 }
 
 #slashIcon {
-  display: none;
+  display: inline;
 }
 
 #musicButton i {
